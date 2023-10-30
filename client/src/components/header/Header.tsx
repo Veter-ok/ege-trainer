@@ -1,18 +1,28 @@
+import { Link } from 'react-router-dom'
 import './header.scss'
+import { useState } from 'react'
+import Input from '../../ui/input/input'
 
 const Header = () => {
-  return (
-	<header>
-		<div className="title">EGE TRAINER</div>
-		<div className="search">
-			<input className="search__input" type="text" placeholder='поиск...'/>
-		</div>
-		<ul className="links-block">
-			<li className="links-block__link"><a href="">Main</a></li>
-			<li className="links-block__link"><a href="https://github.com/Veter-ok">Github</a></li>
-			<li className="links-block__link"><a href="">About me</a></li>
-		</ul>
-	</header>
+
+	const [search, setSearch] = useState('')
+
+	return (
+		<header>
+			<div className="title">EGE TRAINER</div>
+			<div className="search">
+				<Input 
+					placeholder="поиск..."
+					value={search}
+					onChange={setSearch}
+				/>
+			</div>
+			<ul className="links-block">
+				<li className="links-block__link"><Link to="/">Main</Link></li>
+				<li className="links-block__link"><Link to="https://github.com/Veter-ok">Github</Link></li>
+				<li className="links-block__link"><Link to="/login">Login</Link></li>
+			</ul>
+		</header>
   )
 }
 
