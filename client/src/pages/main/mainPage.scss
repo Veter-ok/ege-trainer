@@ -3,7 +3,7 @@
 .main-page {
 	background-color: $primaryColor;
 	width: 100%;
-	height: 1000px;
+	// height: 1000px;
 	padding: 20px 30px;
 	&__title {
 		color: $primaryTextColor;
@@ -11,5 +11,7 @@
 	}
 	&__subject-cards {
 		display: inline-block;
+		margin-top: 10px;
+		margin-bottom: 30px;
 	}
 }
