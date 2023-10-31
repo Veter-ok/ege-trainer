@@ -1,0 +1,31 @@
+@import '../../constants.scss';
+
+.subject-page {
+	height: 600px;
+	padding: 50px;
+	&__title {
+		font-size: 24px;
+		color: $primaryTextColor;
+	}
+	&__progress-bar {
+		&__title {
+			display: inline-block;
+			margin: 20px 0px;
+			color: $primaryTextColor;
+		}
+		&__full-line {
+			display: inline-block;
+			margin-left: 30px;
+			height: 10px;
+			border-radius: 15px;
+			width: 500px;
+			background-color: #000;
+			&__success {
+				width: 50%;
+				height: 10px;
+				border-radius: 15px;
+				background-color: green;
+			}
+		}
+	}
+}

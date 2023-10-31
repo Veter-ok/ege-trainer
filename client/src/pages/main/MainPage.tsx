@@ -1,17 +1,19 @@
+import { useNavigate } from 'react-router-dom'
 import SubjectCard from '../../components/subject-card/SubjectCard'
 import './MainPage.scss'
+import { subjects } from '../../constants/subjects'
 
 const MainPage = () => {
+	const navigate = useNavigate()
 
-	const subjects = ["Русский язык", "Профильная математика", "Физика", "Биология",
-						"Химия", "История", "Обществознание"]
+	const openSubject = (id: number) => navigate(`/subjects/${id}`)
 
 	return (
 		<div className="main-page">
 			<div className="main-page__title">Заголовок</div>
 			<div className="main-page__subject-cards">
 				{subjects.map((value, index) => 
-					<SubjectCard key={index} title={value} progres={index * 10}/>
+					<SubjectCard key={index} subject={value} onClick={openSubject}/>
 				)}
 			</div>
 		</div>

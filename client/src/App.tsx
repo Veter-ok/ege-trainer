@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import MainPage from './pages/main/MainPage'
 import Login from './pages/login/Login'
+import Subject from './pages/subject/Subject'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/subjects/:subjectId' element={<Subject/>}/>
       </Routes>
       <Footer/>
     </div>
