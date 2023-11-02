@@ -1,0 +1,15 @@
+@import '../../constants.scss';
+
+.topic-block {
+	border: 3px solid #242424;
+	display: inline-block;
+	margin: 30px 40px 0px 0px;
+	border-radius: 15px;
+	padding: 10px;
+	width: 400px;
+	height: 250px;
+	&__title {
+		font-size: 20px;
+		color: $primaryTextColor;
+	}
+}

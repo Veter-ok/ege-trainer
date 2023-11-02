@@ -2,7 +2,7 @@
 
 .subject-page {
 	height: 600px;
-	padding: 50px;
+	padding: 20px;
 	&__title {
 		font-size: 24px;
 		color: $primaryTextColor;
@@ -27,5 +27,8 @@
 				background-color: green;
 			}
 		}
+	}
+	&__topics-blocks {
+		display: inline-block;
 	}
 }
