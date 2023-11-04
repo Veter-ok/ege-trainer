@@ -1,9 +1,9 @@
 import { ITopic } from "../types/mainTypes";
 
-export const Themes:ITopic[] = [
+export const Topics:ITopic[] = [
 	{
 		id: 0,
-		title: '',
+		title: 'Паронимы',
 		progress: 23
 	},
 	{

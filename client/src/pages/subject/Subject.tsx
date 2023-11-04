@@ -1,24 +1,26 @@
 import './subject.scss'
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { subjects } from "../../constants/subjects";
-import { Themes } from '../../constants/topics';
+import { Topics } from '../../constants/topics';
 import TopicCard from '../../components/topic-card/topic-card';
 
 const Subject = () => {
 	const { subjectId } = useParams();
-
+	const navigate = useNavigate()
 	const currentlySubject = subjects.filter((value) => value.id === Number(subjectId) ? true : false)[0]
 
-	const findTheme = (id: number) => {
-		for (let i = 0; i++; i < Themes.length) {
-			if (Themes[i].id === id){
-				return Themes[i]
+	const findTopic = (id: number) => {
+		for (let i = 0; i < Topics.length; i++ ) {
+			if (Topics[i].id === id){
+				return Topics[i]
 			}
 		}
-		return Themes[0]
+		return Topics[0]
 	}
 
-	console.log(findTheme(currentlySubject.blocks[0]))
+	const openTopic = (id: number) => {
+		navigate(`/topics/${id}`)
+	}
 	
 	return (
 		<div className="subject-page">
@@ -29,8 +31,8 @@ const Subject = () => {
 					<div style={{width: `${currentlySubject.progress}%`}} className="subject-page__progress-bar__full-line__success"/>
 				</div>
 				<div className="subject-page__topics-blocks">
-					{currentlySubject.blocks.map((value) => 
-						<TopicCard topic={findTheme(value)}/>
+					{currentlySubject.blocks.map((value, index) => 
+						<TopicCard key={index} topic={findTopic(value)} onClick={openTopic}/>
 					)}
 				</div>
 			</div>

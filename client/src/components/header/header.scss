@@ -6,7 +6,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 15px 10%;
-	color: #fff;
+	color: $primaryTextColor;
 	border-bottom: 2px solid $borderColor;
 	.title {
 		font-size: 24px;
@@ -19,7 +19,7 @@ header {
 			display: inline-block;
 			padding: 30px;
 			a{
-				color: #fff;
+				color: $primaryTextColor;
 				text-decoration: none;
 				transition: all 0.3s ease 0s;
 			}
