@@ -1,0 +1,12 @@
+@import '../../constants.scss';
+
+.paronyms-page {
+	&__title {
+		text-align: center;
+		margin: 20px 0px 10px 0px;
+	}
+	&__tip {
+		text-align: center;
+		font-size: 20px;
+	}
+}
