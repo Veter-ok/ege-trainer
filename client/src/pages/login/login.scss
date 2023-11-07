@@ -8,14 +8,17 @@
 		width: 40%;
 		height: 400px;
 		border-radius: 15px;
-		border: 3px solid $borderColor;
+		// border: 3px solid $borderColor;
+		box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.5);
+		background-color: #fff;
 		top: 70px;
 		left: 30%;
 		&__title {
+			position: relative;
 			font-size: 32px;
 			width: 100%;
 			text-align: center;
-			margin: 20px 0px;
+			top: 30px;
 			color: $primaryTextColor;
 		}
 		&__content {

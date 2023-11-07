@@ -1,7 +1,9 @@
 @import '../../constants.scss';
 
 .subject-card {
-	border: 3px solid #242424;
+	// border: 3px solid #242424;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.3);
+	background-color: #fff;
 	display: inline-block;
 	margin: 30px 40px 0px 0px;
 	border-radius: 15px;
@@ -39,5 +41,5 @@
 	}
 }
 .subject-card:hover {
-	box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.5);
 }

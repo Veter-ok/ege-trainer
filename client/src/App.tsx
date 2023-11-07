@@ -10,14 +10,16 @@ import TopicPage from './pages/topic/Topic'
 function App() {
 
   return (
-    <div className='content'>
+    <div>
       <Header/>
-      <Routes>
-        <Route path='/' element={<MainPage/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/subjects/:subjectId' element={<Subject/>}/>
-        <Route path='/topics/:topicId' element={<TopicPage/>}/>
-      </Routes>
+      <div className="content">
+        <Routes>
+          <Route path='/' element={<MainPage/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/subjects/:subjectId' element={<Subject/>}/>
+          <Route path='/topics/:topicId' element={<TopicPage/>}/>
+        </Routes>
+      </div>
       <Footer/>
     </div>
   )

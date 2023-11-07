@@ -7,7 +7,9 @@ header {
 	align-items: center;
 	padding: 15px 10%;
 	color: $primaryTextColor;
-	border-bottom: 2px solid $borderColor;
+	// border-bottom: 1px solid #d8d8d8;
+	//border-radius: 15px;
+	// box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.5);
 	.title {
 		font-size: 24px;
 		cursor: pointer;
