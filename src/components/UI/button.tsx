@@ -3,11 +3,12 @@ import { FunctionComponent as FC } from "react"
 interface IButton {
     text: string,
     onPress: () => void
+    style?: string
 }
 
-export const Button:FC<IButton> = ({text, onPress}) => {
+export const Button:FC<IButton> = ({text, onPress, style}) => {
     return (
-        <button onClick={onPress} className="rounded-xl w-24 h-6 bg-light">
+        <button onClick={onPress} className={`rounded-xl w-36 h-10 bg-light ${style}`}>
             <p>{text}</p>
         </button>
     )

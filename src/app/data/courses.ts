@@ -1,17 +1,20 @@
-import { ICourse, ISubject } from "../../types/courses";
+import { ICourse, ISubject } from "@/types/courses"
 
 export const subjects:ISubject[] = [
     {
         id: 0,
-        title: "Русс. язык"
+        title: "Русс. язык",
+        subtitle: "rus"
     },
     {
         id: 1,
-        title: "Математика"
+        title: "Математика",
+        subtitle: "math"
     },
     {
         id: 2,
-        title: "Информатика"
+        title: "Информатика",
+        subtitle: "inf"
     },
 ]
 
@@ -21,48 +24,48 @@ export const courses:ICourse[] = [
         subject: 0,
         title: "Задание 4",
         description: "Ударения",
-        path: "courses/rus/0"
+        path: "rus/task4"
     },
     {
         id: 1,
         subject: 0,
         title: "Задание 9",
         description: "Орфограммы в корне слова",
-        path: "courses/rus/1",
+        path: "rus/task9",
     },
     {
         id: 2,
         subject: 0,
         title: "Задание 10",
         description: "Орфограммы в приставке",
-        path: "courses/rus/2"
+        path: "rus/task10"
     },
     {
         id: 3,
         subject: 0,
         title: "Задание 11",
         description: "Орфограммы в суффиксе",
-        path: "courses/rus/3"
+        path: "rus/task11"
     },
     {
         id: 4,
         subject: 0,
         title: "Задание 12",
         description: "Орфограммы в окончании",
-        path: "courses/rus/4"
+        path: "rus/task12"
     },
     {
         id: 10,
         subject: 1,
         title: "Задание 5",
         description: "Уравнения",
-        path: "courses/math/10"
+        path: "math/task5"
     },
     {
         id: 20,
         subject: 2,
         title: "Задание 7",
         description: "...",
-        path: "courses/inf/20"
+        path: "inf/task7"
     }
 ]

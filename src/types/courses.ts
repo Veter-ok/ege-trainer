@@ -1,6 +1,7 @@
 export interface ISubject {
     id: number,
     title: string
+    subtitle: string
 }
 
 export interface ICourse {
