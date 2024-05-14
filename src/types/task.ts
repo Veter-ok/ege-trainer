@@ -1,6 +1,7 @@
 interface IMissedLatter {
     id: number
-    title: string  
+    title: string 
+    task_id: number, 
     answer: string
     options: string[]
 }

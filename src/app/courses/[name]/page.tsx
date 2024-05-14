@@ -9,7 +9,7 @@ export default function Courses() {
 
   return (
     <div>
-        <h1>{params.name}</h1>
+        <p className="text-2xl text-center">{params.name}</p>
     </div>
   );
 }
