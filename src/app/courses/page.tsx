@@ -22,7 +22,7 @@ export default function AllCourses() {
 
   return (
     <div>
-        <div className="flex justify-center h-full mt-5">
+        <div className="flex justify-center h-full mt-5 gap-5">
             {subjects.map((subject) => 
                 <MultipleChoiceButton 
                     key={subject.id} 
@@ -33,7 +33,7 @@ export default function AllCourses() {
                 />
             )}
         </div>
-        <div className="grid grid-cols-4 gap-5 px-5 mt-10">
+        <div className="grid grid-cols-2 gap-5 px-5 mt-10 md:grid-cols-3 lg:grid-cols-4">
             {currentlyCourses.map((course) =>
                <CourseBlock key={course.id} course={course}/>
             )}

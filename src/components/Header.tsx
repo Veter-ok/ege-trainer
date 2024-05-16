@@ -10,10 +10,10 @@ const Header = () => {
     };
     
     return (
-        <div className="div">
+        <div>
             <div className="flex flex-row w-screen m-0 px-6 py-8">
-                <h1 className="basis-1/2 text-white text-2xl w-full sm:text-3xl">ЕГЭ тренажёр</h1>
-                <ul className="flex basis-2/3">
+                <h1 className="basis-2/3 text-white text-2xl w-30 sm:text-3xl">ЕГЭ тренажёр</h1>
+                <ul className="flex basis-1/3 gap-10">
                     <Link href="/" className="hidden md:block flex-initial text-center m-auto py-2 h-10 rounded-md bg-light hover:bg-secondary lg:w-44 md:w-32">Lorem</Link>
                     <Link href="/courses" className="hidden md:block flex-initial text-center m-auto py-2 h-10 rounded-md bg-light hover:bg-secondary lg:w-44 md:w-32">Тренажёры</Link>
                     <Link href="/login" className="hidden md:block flex-initial text-center m-auto py-2 h-10 rounded-md bg-light lg:w-44 md:w-32">Войти</Link>
@@ -37,9 +37,9 @@ const Header = () => {
                 </button>
             </div>
             <div className={`flex ${isOpen ? "flex" : "hidden"} w-full px-10 mx-auto justify-center gap-5 md:hidden`}>
-                <Link href="/" className="w-full text-center m-auto py-2 h-10 rounded-md bg-light">Lorem</Link>
-                <Link href="/courses" className="w-full  text-center m-auto py-2 h-10 rounded-md bg-light">Тренажёры</Link>
-                <Link href="/login" className="w-full  text-center m-auto py-2 h-10 rounded-md bg-light">Войти</Link>
+                <Link href="/" onClick={() => setIsOpen(false)} className="w-full text-center m-auto py-2 h-10 rounded-md bg-light">Lorem</Link>
+                <Link href="/courses" onClick={() => setIsOpen(false)} className="w-full text-center m-auto py-2 h-10 rounded-md bg-light">Тренажёры</Link>
+                <Link href="/login" onClick={() => setIsOpen(false)} className="w-full text-center m-auto py-2 h-10 rounded-md bg-light">Войти</Link>
             </div>
         </div>
     )
