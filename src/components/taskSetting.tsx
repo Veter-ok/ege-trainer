@@ -12,10 +12,10 @@ interface IPropsTaskSetting {
 
 const TaskSetting:FC<IPropsTaskSetting> = ({numberofWords, SetNumberofWords, traningType, setTraningType, startTask}) => {
     return (
-        <div className="w-1/2 mx-auto">
+        <div className="w-3/4 mx-auto">
             <div className='mt-12'>
                 <p className='text-center'>Количество слов</p>
-                <div className='flex justify-center mt-3 gap-7'>
+                <div className='flex justify-center mt-3 gap-3 sm:gap-7'>
                     <MultipleChoiceButton text="10" value={10} currentlyValue={numberofWords} onPress={SetNumberofWords}/>
                     <MultipleChoiceButton text="20" value={20} currentlyValue={numberofWords} onPress={SetNumberofWords}/>
                     <MultipleChoiceButton text="50" value={50} currentlyValue={numberofWords} onPress={SetNumberofWords}/>

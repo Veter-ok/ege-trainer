@@ -179,7 +179,7 @@ export const tasks_9_12:IMissedLatter[] = [
         task_id: 9,
         title: "вин_грет",
         answer: "е",
-        options: ["и", "e"]
+        options: ["и", "е"]
     }, 
     {
         id: 26,

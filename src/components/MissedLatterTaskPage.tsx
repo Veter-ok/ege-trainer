@@ -43,8 +43,8 @@ const MissedLatterTaskPage:FC<IPropsMissedLatterTaskPage> = ({wordsForTasks}) =>
     return (
         <div>
         {isTaskStart ? 
-            <div className="w-2/3 mx-auto mt-20">
-                <p className="text-center text-xl mb-5">{indexOfTask+1}/{tasks.length}</p>
+            <div className="w-3/4 mx-auto mt-20">
+                <p className="text-center text-lg mb-3 sm:text-xl">{indexOfTask+1}/{tasks.length}</p>
                 <MissedLatter task={tasks[indexOfTask]}/>
                 <div className="flex items-center mt-8"><Button text="Дальше" onPress={getNextTask} style="mx-auto"/></div>
             </div>

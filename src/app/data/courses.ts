@@ -16,6 +16,11 @@ export const subjects:ISubject[] = [
         title: "Информатика",
         subtitle: "inf"
     },
+    {
+        id: 3,
+        title: "Англ. язык",
+        subtitle: "inf"
+    }
 ]
 
 export const courses:ICourse[] = [

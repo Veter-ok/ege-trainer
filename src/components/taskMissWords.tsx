@@ -23,7 +23,7 @@ const MissedLatter:FC<IMissedLetterProps> = ({task}) => {
 
     return (
         <div className="w-full mx-auto">
-            <p className="text-center text-5xl">{task.title}</p>
+            <p className="text-center text-3xl sm:text-5xl">{task.title}</p>
             <div className="flex justify-center gap-6 mt-7">
                 <AnswerOptions id={task.id} isActive={isActiveOption} isCorrect={task.options[0] === task.answer} onClick={checkAnswer} title={task.options[0]}/>
                 <AnswerOptions id={task.id} isActive={isActiveOption} isCorrect={task.options[1] === task.answer} onClick={checkAnswer} title={task.options[1]}/>
