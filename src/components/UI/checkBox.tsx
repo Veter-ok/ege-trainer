@@ -13,7 +13,7 @@ const MultipleChoiceButton:FC<ICheckBoxProps> = ({text, value, currentlyValue, o
     return (
         <button 
             onClick={() => onPress(value)}
-            className={`px-2 whitespace-nowrap rounded-xl w-[200px] h-[50px] ${style} ${value === currentlyValue ? 'bg-light' : 'bg-secondary'}`}
+            className={`px-2 py-2 rounded-xl w-[150px] h-10 ${style} ${value === currentlyValue ? 'bg-light' : 'bg-secondary'}`}
         >
             <p className="">{text}</p>
         </button>

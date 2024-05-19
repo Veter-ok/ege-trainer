@@ -36,7 +36,7 @@ const Header = () => {
                     </span>  
                 </button>
             </div>
-            <div className={`flex ${isOpen ? "flex" : "hidden"} w-full px-10 mx-auto justify-center gap-5 md:hidden`}>
+            <div className={`flex ${isOpen ? "flex" : "hidden"} w-full px-10 mb-[30px] mx-auto justify-center gap-5 md:hidden`}>
                 <Link href="/" onClick={() => setIsOpen(false)} className="w-full text-center m-auto py-2 h-10 rounded-md bg-light">Lorem</Link>
                 <Link href="/courses" onClick={() => setIsOpen(false)} className="w-full text-center m-auto py-2 h-10 rounded-md bg-light">Тренажёры</Link>
                 <Link href="/login" onClick={() => setIsOpen(false)} className="w-full text-center m-auto py-2 h-10 rounded-md bg-light">Войти</Link>

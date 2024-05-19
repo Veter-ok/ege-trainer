@@ -16,7 +16,7 @@ const CourseBlock:FC<ICourseBlock> = ({course}) => {
                 <p className="text-lg text-center m-auto">Icon</p>
             </div>
             <p className="text-sm">{course.description}</p>
-            <Link href={`courses/${subjects.filter((a) => a.id === course.subject)[0].subtitle}/${course.id}`} className="relative mt-auto rounded-xl w-24 h-6 bg-light text-center">открыть</Link>
+            <Link href={`courses/${subjects.filter((a) => a.id === course.subject)[0].subtitle}/${course.id}`} className="relative mt-auto rounded-md py-1 w-24 h-8 bg-light text-center">открыть</Link>
         </div>
 )}  
 
