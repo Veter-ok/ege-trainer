@@ -1,6 +1,5 @@
 import { FunctionComponent as FC } from "react"
 import { ICourse } from "@/types/courses"
-import { Button } from "./UI/button"
 import Link from "next/link"
 import { subjects } from "@/app/data/courses"
 
@@ -10,7 +9,7 @@ interface ICourseBlock {
 
 const CourseBlock:FC<ICourseBlock> = ({course}) => {
     return (
-        <div className="inline-grid grid-cols-1 grid-rows-3 gap-3 mt-5 h-34 bg-secondary p-3 sm:grid-cols-2">
+        <div className="inline-grid grid-cols-1 grid-rows-3 gap-3 mt-5 h-34 rounded-md bg-secondary p-3 sm:grid-cols-2">
             <p className="text-lg">{course.title}</p>
             <div className="hidden row-span-3 bg-light py-16 sm:block">
                 <p className="text-lg text-center m-auto">Icon</p>

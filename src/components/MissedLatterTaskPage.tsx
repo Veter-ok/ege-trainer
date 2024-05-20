@@ -3,7 +3,7 @@ import { Button } from "./UI/button"
 import { getRandomNumber } from "@/utils/random"
 import { isTaskInArray } from "@/utils/taskUtils"
 import TaskSetting from "./taskSetting"
-import MissedLatter from "./taskMissWords"
+import AnswerOptions from "./UI/answerOption"
 
 interface IPropsMissedLatterTaskPage {
     wordsForTasks: IMissedLatter[]
@@ -11,19 +11,27 @@ interface IPropsMissedLatterTaskPage {
 
 const MissedLatterTaskPage:FC<IPropsMissedLatterTaskPage> = ({wordsForTasks}) => {
     const [tasks, setTasks] = useState<IMissedLatter[]>([])
-    const [isTaskStart, setTaskStart] = useState(false)
+    const [currentlyWord, setCurrentlyWord] = useState<IMissedLatter>({id: -1, title: "", task_id: -1, answer: "", options: [""]})
+    const [indexOfWord, setIndexOfWord] = useState(0)
+
     const [numberofWords, SetNumberofWords] = useState(10)
-    const [indexOfTask, setIndexOfTask] = useState(0)
     const [traningType, setTraningType] = useState(1)
-    
+
+    const [isTaskStart, setTaskStart] = useState(false)
+    const [isShowTotalStat, setIsShowTotalStat] = useState(false)
+
+    const [correctAnswers, setCorrectAnswers] = useState(0)
+    const [isActiveAnswer, setIsActiveAnswer] = useState(true) 
 
     const getNextTask = () => {
-        if (tasks.length > indexOfTask + 1){
-            setIndexOfTask(prevValue => prevValue + 1)
+        setIsActiveAnswer(true)
+        if (tasks.length > indexOfWord + 1){
+            setIndexOfWord(prevValue => prevValue + 1)
+            setCurrentlyWord(tasks[indexOfWord + 1])
         }else{
             setTasks([])
-            setIndexOfTask(0)
-            setTaskStart(false)
+            setIndexOfWord(0)
+            setIsShowTotalStat(true)
         }
     }
 
@@ -37,25 +45,55 @@ const MissedLatterTaskPage:FC<IPropsMissedLatterTaskPage> = ({wordsForTasks}) =>
             newTasks.push(wordsForTasks[randomIndex])
         }
         setTasks(newTasks)
+        setCurrentlyWord(newTasks[0])
         setTaskStart(true)
+    }
+
+    const endTask = () => {
+        setIsShowTotalStat(false)
+        setTaskStart(false)
+    }
+
+    const checkAnswer = (option: string) => {
+        setIsActiveAnswer(false)
+        if (option === currentlyWord.answer){
+            setCorrectAnswers(prevValue => prevValue + 1)
+        }
     }
 
     return (
         <div>
-        {isTaskStart ? 
+        {isTaskStart && !isShowTotalStat ? 
             <div className="w-3/4 mx-auto mt-20">
-                <p className="text-center text-lg mb-3 sm:text-xl">{indexOfTask+1}/{tasks.length}</p>
-                <MissedLatter task={tasks[indexOfTask]}/>
+                <p className="text-center text-lg mb-3 sm:text-xl">{indexOfWord+1}/{tasks.length}</p>
+                <div className="w-full mx-auto">
+                    <p className="text-center text-3xl sm:text-5xl">{currentlyWord.title}</p>
+                    <div className="flex justify-center gap-6 mt-7">
+                        <AnswerOptions isActive={isActiveAnswer} word={currentlyWord} onClick={checkAnswer} title={currentlyWord.options[0]}/>
+                        <AnswerOptions isActive={isActiveAnswer} word={currentlyWord} onClick={checkAnswer} title={currentlyWord.options[1]}/>
+                    </div>
+                </div>
                 <div className="flex items-center mt-8"><Button text="Дальше" onPress={getNextTask} style="mx-auto"/></div>
             </div>
             :
-            <TaskSetting 
-                numberofWords={numberofWords}
-                SetNumberofWords={SetNumberofWords}
-                traningType={traningType}
-                setTraningType={setTraningType}
-                startTask={startTask}
-            />
+            <>
+                {isTaskStart && isShowTotalStat ?
+                    <div className="w-3/4 mx-auto mt-10">
+                        <p className="text-center text-xl mb-4">Статистика</p>
+                        <p className="text-center">Правильные ответы: {correctAnswers}</p>
+                        <p className="text-center">Неправильные ответы: {numberofWords - correctAnswers}</p>
+                        <div className="flex items-center mt-8"><Button text="Закрыть" onPress={() => endTask()} style="mx-auto"/></div>
+                    </div>
+                    :
+                    <TaskSetting 
+                        numberofWords={numberofWords}
+                        SetNumberofWords={SetNumberofWords}
+                        traningType={traningType}
+                        setTraningType={setTraningType}
+                        startTask={startTask}
+                    />
+                }
+            </>
         }
         </div>
     )

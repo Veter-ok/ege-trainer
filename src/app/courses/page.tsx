@@ -22,7 +22,7 @@ export default function AllCourses() {
 
   return (
     <div>
-        <div className="w-5/6 overflow-y-auto flex flex-row justify-start gap-5 mt-5 mx-auto sm:justify-center">
+        <div className="w-5/6 overflow-y-auto flex flex-row justify-start gap-5 mt-11 mx-auto sm:justify-center">
                 {subjects.map((subject) => 
                     <MultipleChoiceButton 
                         style="whitespace-nowrap"
